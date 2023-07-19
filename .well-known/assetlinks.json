@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "rrobben.sleep_clock.twa",
+        "sha256_cert_fingerprints": ["20:EB:14:AF:E1:EF:A5:61:11:2A:19:EB:F6:85:4B:8D:57:48:65:E8:BF:91:AE:4E:FC:30:08:51:BE:E1:01:D1"]
+      }
+    }]
