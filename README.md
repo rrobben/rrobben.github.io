@@ -1,6 +1,6 @@
 # Privacy Policy for Sleep Clock
 
-**Effective Date:** 26.2.2024
+**Effective Date:** 15.5.2024
 
 ## 1. Introduction
 
