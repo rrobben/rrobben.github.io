@@ -35,3 +35,7 @@ Contexts (`I18nContext`, `ColorModeContext`) live in their own files, separate f
 ## Deployment
 
 Deployed to GitHub Pages via the `dist/` output. The hash router is required for GitHub Pages (no server-side routing). Build: `npm run build`.
+
+## Private notes
+
+`easyopp-notes.local/` holds raw notes on EasyOpp work (outcomes, ownership, framing), indexed by its `README.md`. Use them as source material for site copy. The folder is gitignored by the `*.local` rule and the repo is public, so never commit it or copy internal details (costs, partner or customer names, PR numbers) into the site verbatim.
