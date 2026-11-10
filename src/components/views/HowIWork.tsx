@@ -4,7 +4,7 @@ import AccordionGroup from "../common/Accordion";
 import TerminalRoundedIcon from "@mui/icons-material/TerminalRounded";
 
 // i18n keys under `howIWork.*`: working practices first, then the stack after the divider.
-const items = ["AIAssisted", "Guardrails", "Architecture", "Production", "Stack"];
+const items = ["AIAssisted", "Product", "Guardrails", "Architecture", "Production", "Stack"];
 
 const HowIWork = () => {
     const { t } = useTranslation();

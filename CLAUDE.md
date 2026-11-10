@@ -38,9 +38,11 @@ All user-visible text lives in `src/i18n/en.json` and `src/i18n/fi.json`. Finnis
 
 ## How I work page (formerly Technologies)
 
-Decided 2026-11: with most code written by AI, the page leads with working practices (AI pipeline, agent guardrails, architecture, running production) and lists the stack as one compact "Technologies" accordion of one-line tiles after the divider, framed as the knowledge that makes reviewing generated code possible. Don't bring back one essay per technology, and don't repeat Experience's stories here: Experience holds the outcomes, this page the method. The route stays `#tech` so existing links keep working.
+Decided 2026-11: with most code written by AI, the page leads with working practices (AI pipeline, product and UI design, agent guardrails, architecture, running production) and lists the stack as one compact "Technologies" accordion of one-line tiles after the divider, framed as the knowledge that makes reviewing generated code possible. Don't bring back one essay per technology, and don't repeat Experience's stories here: Experience holds the outcomes, this page the method. The route stays `#tech` so existing links keep working.
 
 `src/components/views/HowIWork.tsx` holds a flat `items` array of i18n key strings, split into two groups by `dividerAfter: true` on the last practice item. The front-page chips (`skills.*`) are concrete nouns (stack plus Claude Code), not practices.
+
+Positioning (decided 2026-11-10): the site targets architect and lead developer roles. The profile leads with "where architecture meets product" and with matching human review to the stakes (read the diff in payroll, data models and production; spec, tests and a browser check suffice in side projects). Side projects lead with the user problem, product decisions (briefs, Claude mockups) and what real use taught about building with agents; the stack is one closing sentence, not per-project detail.
 
 Years of experience count from 4/2017: "almost 10 years" until spring 2027, then "10 years".
 
@@ -66,6 +68,10 @@ The look is the "soft" design (direction C, "Dusk" dark / "Daylight" light): rou
 ## React contexts
 
 Contexts (`I18nContext`, `ColorModeContext`) live in their own files, separate from the Provider component that consumes them. The `react-refresh/only-export-components` lint rule rejects a file that exports both a context and a component. New contexts should follow the same pattern: `XxxContext.ts` for the `createContext` call, `XxxProvider.tsx` for the component.
+
+## Link preview and metadata
+
+`index.html` repeats the profile summary in `og:description`, `twitter:description` and the JSON-LD `description`/`knowsAbout`, and `public/og-image.png` (1200×630) shows the front-page chips and a tagline. Update them whenever the profile framing or chips change. The image has no source in the repo: rebuild it as an HTML card in the dark palette with Montserrat from `node_modules/@fontsource/montserrat` and render it with headless Chrome (`--headless=new --window-size=1200,630 --screenshot=...`).
 
 ## Private notes
 
