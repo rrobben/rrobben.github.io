@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Claude Code: share settings, hooks and the dev server config, keep local files (locks, worktrees) out
+.claude/*
+!.claude/settings.json
+!.claude/hooks/
+!.claude/launch.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
