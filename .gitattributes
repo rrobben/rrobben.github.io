@@ -1,0 +1,2 @@
+# Shell scripts (Claude Code hooks) run under bash, which fails on CRLF line endings
+*.sh text eol=lf
