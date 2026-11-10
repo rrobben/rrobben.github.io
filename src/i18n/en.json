@@ -11,8 +11,8 @@
     "linkedin": "linkedin.com/in/rpoyry",
     "github": "github.com/rrobben",
     "mode": {
-        "dark": "Dark mode",
-        "light": "Light mode"
+        "dark": "Dark theme",
+        "light": "Light theme"
     },
     "workExperience": {
         "header": {

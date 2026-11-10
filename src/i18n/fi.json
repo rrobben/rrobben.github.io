@@ -6,12 +6,19 @@
     "Experience": "Työkokemus",
     "Education": "Koulutus",
     "Contact": "Yhteystiedot",
+    "mode": {
+        "dark": "Tumma teema",
+        "light": "Vaalea teema"
+    },
     "aboutMeContent": "Osaava Lead Developer 9 vuoden kokemuksella Reactista, .NET:stä ja Azuresta. Olen kehittänyt useita palveluita alusta saakka sekä ollut uudistamassa vanhempia järjestelmiä. Nautin työssäni erityisesti arkkitehtuurin ja tietomallien suunnittelusta — niissä tehdyt ratkaisut helpottavat kaikkea myöhempää työtä. Viime aikoina olen keskittynyt AI-avusteisen kehityksen integroimiseen sekä omaan työnkulkuuni että tiimimme prosesseihin.",
     "workExperience": {
         "header": {
             "EasyOpp": "Lead Developer, EasyOpp",
             "Adalia": "Software Developer, Adalia Oy",
             "Other": "Sivuprojektit"
+        },
+        "subheader": {
+            "EasyOpp": "1/2023 alkaen"
         },
         "content": {
             "EasyOpp": "Tuotekehitystiimissä toiminnanohjausjärjestelmän kehitys- ja suunnittelutyö. Kaksi olennaisinta sovellusta ovat mobiiliin suunnattu PWA, jota asiakasyritystemme työntekijät käyttävät työaikansa kellottamiseen, kirjaamiseen ja tarkasteluun. Ja hallinnallisiin toimintoihin suunnattu web-sovellus, joka sisältää mm. työajan hyväksyntään, palkkojen laskentaan ja siirtoon sekä näiden laskennan konfigurointiin liittyviä ominaisuuksia.<br /><br />Olin pääasiallisena kehittäjänä tekemässä alusta saakka uutta mobiilikäyttöliittymää (ReactJS + TypeScript). Vastuullani oli luoda pohja muulle kehitykselle sekä olennaisimpien toimintojen ja yleiskäyttöisten komponenttien toteutus. Näiden lisäksi katselmoin muiden tekemää koodia ja tein sovelluksen Azure-julkaisua varten vaadittavat infrastruktuurin konfiguroinnit.<br /><br />Olen ollut myös vastuussa palkanlaskentaprosessin uudistamisen suunnittelusta sekä tietomallin parannusten että käyttöliittymään liittyvien muutosten osalta, minkä tavoitteena on tehdä prosessista käyttäjälle helpompi ja selkeämpi. Tärkeänä osana suunnittelua on ollut huomioida, kuinka käyttöliittymään ja tietomalliin liittyvät muutokset liittyvät toisiinsa, jotta ne voidaan ottaa huomioon toteutuksen alusta saakka.<br /><br />Senior Developerin ja sittemmin Lead Developerin roolissa minulla on ollut mahdollisuus ohjata nuorempia kehittäjiä, jakaa tietoa ja auttaa heitä erilaisten ongelmien ratkaisussa. Tästä olen saanut positiivista palautetta henkilöiltä, joita olen ohjannut. Lead-roolissa olen ottanut laajempaa vastuuta tuotteen arkkitehtuurista ja koodikannan pitkäaikaisesta kunnosta.<br /><br />Viimeisen vuoden aikana olen integroinut Clauden sekä omaan kehitystyöhöni että tiimimme prosesseihin — käytän sitä työn rajaamiseen, prototypointiin ja koodikatselmointiin. AI-avusteinen kehitys on muuttanut tapaani työskennellä merkittävästi, ja tiimin auttaminen tämän muutoksen läpi on tullut aidoksi osaksi rooliani.<br /><br />Teknologioista käytössä on ollut pääasiassa React + TypeScript, C# + .NET, MSSQL ja Azure. Lisäksi olen ylläpitänyt olemassa olevia E2E-testejä, joissa käytössä on Robot Framework ja Playwright.",
