@@ -54,4 +54,4 @@ Contexts (`I18nContext`, `ColorModeContext`) live in their own files, separate f
 
 ## Private notes
 
-`easyopp-notes.local/` holds raw notes on EasyOpp work (outcomes, ownership, framing), indexed by its `README.md`. Use them as source material for site copy. The folder is gitignored by the `*.local` rule and the repo is public, so never commit it or copy internal details (costs, partner or customer names, PR numbers) into the site verbatim.
+`easyopp-notes.local/` holds raw notes on EasyOpp work (outcomes, ownership, framing), indexed by its `README.md`. Use them as source material for site copy. The folder is gitignored by the `*.local` rule and the repo is public, so never commit it or copy internal details (costs, partner or customer names, PR numbers) into the site verbatim. Keep telematics vendors generic on the site ("tracker vendors"), never by name. Claim only what the notes support: say "built for" where a note has no usage numbers.
