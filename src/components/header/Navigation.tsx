@@ -28,7 +28,7 @@ const pages: HeaderItem[] = [
     { path: "", label: "Profile", Icon: AccountCircleOutlinedIcon },
     { path: "experience", label: "Experience", Icon: WorkOutlineRoundedIcon },
     { path: "education", label: "Education", Icon: SchoolOutlinedIcon },
-    { path: "tech", label: "Technologies", Icon: TerminalRoundedIcon },
+    { path: "tech", label: "HowIWork", Icon: TerminalRoundedIcon },
     { path: "contact", label: "Contact", Icon: AlternateEmailRoundedIcon },
 ];
 

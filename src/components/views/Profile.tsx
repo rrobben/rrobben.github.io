@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import Layout from "../layout/Layout";
 
 // i18n keys under `skills.*`, shown as chips under the job title.
-const skills = ["react", "dotnet", "ai"];
+const skills = ["react", "dotnet", "azure", "claudeCode"];
 
 const cardPadding = { xs: 3, sm: 4 };
 

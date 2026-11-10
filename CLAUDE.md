@@ -34,11 +34,15 @@ All user-visible text lives in `src/i18n/en.json` and `src/i18n/fi.json`. Finnis
 
 - Paragraph breaks within a single translation value use `<br /><br />` (with spaces). The Accordion component renders content via `dangerouslySetInnerHTML`, so HTML is supported there. The Profile bio is split on `<br /><br />` and rendered as multiple `<Typography>` elements.
 - `fi.json` only needs to contain keys that differ from `en.json`. Keys not present in Finnish fall back to English.
-- The `tech` block exists in both files. Adding a new tech accordion requires a key in `tech.header.*` and `tech.content.*` in both files, plus adding the key to the `techs` array in `Technologies.tsx`.
+- The `howIWork` block exists in both files. Adding an accordion there requires a key in `howIWork.header.*` and `howIWork.content.*` in both files, plus adding the key to the `items` array in `HowIWork.tsx`.
 
-## Technologies page
+## How I work page (formerly Technologies)
 
-`src/components/views/Technologies.tsx` holds a flat `techs` array of i18n key strings. The array is split into two visual groups by passing `dividerAfter: true` on the last item of group 1. The `AccordionGroup` component renders a subtle MUI `<Divider>` after that item and keeps a single `expanded` state across all items (only one accordion open at a time).
+Decided 2026-11: with most code written by AI, the page leads with working practices (AI pipeline, agent guardrails, architecture, running production) and lists the stack as one compact "Technologies" accordion of one-line tiles after the divider, framed as the knowledge that makes reviewing generated code possible. Don't bring back one essay per technology, and don't repeat Experience's stories here: Experience holds the outcomes, this page the method. The route stays `#tech` so existing links keep working.
+
+`src/components/views/HowIWork.tsx` holds a flat `items` array of i18n key strings, split into two groups by `dividerAfter: true` on the last practice item. The front-page chips (`skills.*`) are concrete nouns (stack plus Claude Code), not practices.
+
+Years of experience count from 4/2017: "almost 10 years" until spring 2027, then "10 years".
 
 ## AccordionGroup
 

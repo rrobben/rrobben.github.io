@@ -2,7 +2,7 @@ import { createHashRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import App from "./components/layout/App.tsx";
 import Profile from "./components/views/Profile.tsx";
-import Technologies from "./components/views/Technologies.tsx";
+import HowIWork from "./components/views/HowIWork.tsx";
 import Experience from "./components/views/Experience.tsx";
 import Education from "./components/views/Education.tsx";
 import Contact from "./components/views/Contact.tsx";
@@ -26,7 +26,7 @@ const router = createHashRouter([
             },
             {
                 path: "tech",
-                element: <Technologies />,
+                element: <HowIWork />,
             },
             {
                 path: "contact",
