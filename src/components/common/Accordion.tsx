@@ -1,46 +1,10 @@
-import Accordion, { AccordionProps } from "@mui/material/Accordion";
+import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Divider, Typography } from "@mui/material";
+import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
+import { Box, Divider, Typography } from "@mui/material";
 import { Fragment, useState } from "react";
-import { styled } from "@mui/material/styles";
 import { useIsMobile } from "../../hooks";
-
-const StyledAccordion = styled((props: AccordionProps) => <Accordion disableGutters elevation={0} square {...props} />)(
-    ({ theme }) => ({
-        border: `1px solid ${theme.palette.divider}`,
-        "&:not(:last-child)": {
-            borderBottom: 0,
-        },
-        "&.last-of-group": {
-            borderBottom: `1px solid ${theme.palette.divider}`,
-        },
-        "&::before": {
-            display: "none",
-        },
-    })
-);
-
-const StyledAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
-    padding: theme.spacing(2),
-    borderTop: "1px solid rgba(0, 0, 0, .125)",
-    textAlign: "justify",
-    backgroundColor: theme.palette.background.default,
-    "& a": {
-        color: theme.palette.primary.main,
-    },
-    "& ul": {
-        textAlign: "left",
-        paddingLeft: theme.spacing(3),
-    },
-    "& li": {
-        marginBottom: theme.spacing(1),
-    },
-    "& li:last-child": {
-        marginBottom: 0,
-    },
-}));
 
 interface AccordionItem {
     header: string;
@@ -53,6 +17,8 @@ interface Props {
     items: AccordionItem[];
 }
 
+// Each item is its own rounded card; the card, chevron and content styles live in the
+// MuiAccordion* overrides in theme.ts.
 const AccordionGroup = ({ items }: Props) => {
     const isMobile = useIsMobile();
     // Don't expand by default in mobile to allow better overview of contents.
@@ -62,33 +28,33 @@ const AccordionGroup = ({ items }: Props) => {
         setExpanded(newExpanded ? panel : false);
     };
 
-    return items.map((i) => (
-        <Fragment key={i.header}>
-            <StyledAccordion
-                disableGutters
-                expanded={expanded === i.header}
-                onChange={handleChange(i.header)}
-                className={i.dividerAfter ? "last-of-group" : undefined}
-            >
-                <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ backgroundColor: "rgba(255, 255, 255, .05)" }}>
-                    {i.subheader ? (
-                        <>
-                            <Typography sx={{ textAlign: "initial", width: "50%", flexGrow: 1 }}>
+    return (
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+            {items.map((i) => (
+                <Fragment key={i.header}>
+                    <Accordion expanded={expanded === i.header} onChange={handleChange(i.header)}>
+                        <AccordionSummary expandIcon={<ExpandMoreRoundedIcon />}>
+                            <Typography variant="h6" component="span" sx={{ display: "block" }}>
                                 {i.header}
                             </Typography>
-                            <Typography sx={{ color: "text.secondary", mr: 2 }}>{i.subheader}</Typography>
-                        </>
-                    ) : (
-                        <Typography>{i.header}</Typography>
-                    )}
-                </AccordionSummary>
-                <StyledAccordionDetails>
-                    <div dangerouslySetInnerHTML={{ __html: i.content }}></div>
-                </StyledAccordionDetails>
-            </StyledAccordion>
-            {i.dividerAfter && <Divider sx={{ my: 3 }} />}
-        </Fragment>
-    ));
+                            {i.subheader ? (
+                                <Typography
+                                    component="span"
+                                    sx={{ display: "block", mt: 0.75, fontSize: "0.875rem", fontWeight: 500, color: "text.secondary" }}
+                                >
+                                    {i.subheader}
+                                </Typography>
+                            ) : null}
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <div dangerouslySetInnerHTML={{ __html: i.content }}></div>
+                        </AccordionDetails>
+                    </Accordion>
+                    {i.dividerAfter && <Divider sx={{ my: 1.5, mx: 3 }} />}
+                </Fragment>
+            ))}
+        </Box>
+    );
 };
 
 export default AccordionGroup;

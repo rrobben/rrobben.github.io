@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import Layout from "../layout/Layout";
 import AccordionGroup from "../common/Accordion";
-import WorkIcon from "@mui/icons-material/Work";
+import WorkOutlineRoundedIcon from "@mui/icons-material/WorkOutlineRounded";
 
 const exp = ["EasyOpp", "Adalia", "Other"];
 
@@ -9,7 +9,7 @@ const Experience = () => {
     const { t } = useTranslation();
 
     return (
-        <Layout header={t("Experience")} Icon={WorkIcon}>
+        <Layout header={t("Experience")} Icon={WorkOutlineRoundedIcon}>
             <AccordionGroup
                 items={exp.map((e) => ({
                     header: t(`workExperience.header.${e}`),

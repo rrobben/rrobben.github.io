@@ -1,14 +1,31 @@
 {
     "Name": "Roope Pöyry",
-    "JobTitle": "Lead Developer · React, .NET, AI-assisted workflows",
+    "JobTitle": "Lead Developer",
+    "skills": {
+        "react": "React",
+        "dotnet": ".NET",
+        "ai": "AI-avusteiset työtavat"
+    },
     "Profile": "Profiili",
     "Technologies": "Teknologiat",
     "Experience": "Työkokemus",
     "Education": "Koulutus",
     "Contact": "Yhteystiedot",
+    "contactLabel": {
+        "email": "Sähköposti",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+    },
+    "home": "Etusivu",
+    "mainNav": "Päävalikko",
+    "openMenu": "Avaa valikko",
+    "settings": "Asetukset",
+    "changeLanguage": "Vaihda kieli",
     "mode": {
         "dark": "Tumma teema",
-        "light": "Vaalea teema"
+        "light": "Vaalea teema",
+        "switchToLight": "Vaihda vaaleaan teemaan",
+        "switchToDark": "Vaihda tummaan teemaan"
     },
     "aboutMeContent": "Osaava Lead Developer 9 vuoden kokemuksella Reactista, .NET:stä ja Azuresta. Olen kehittänyt useita palveluita alusta saakka sekä ollut uudistamassa vanhempia järjestelmiä. Nautin työssäni erityisesti arkkitehtuurin ja tietomallien suunnittelusta — niissä tehdyt ratkaisut helpottavat kaikkea myöhempää työtä. Viime aikoina olen keskittynyt AI-avusteisen kehityksen integroimiseen sekä omaan työnkulkuuni että tiimimme prosesseihin.",
     "workExperience": {

@@ -38,13 +38,24 @@ All user-visible text lives in `src/i18n/en.json` and `src/i18n/fi.json`. Finnis
 
 ## Technologies page
 
-`src/components/views/Technologies.tsx` holds a flat `techs` array of i18n key strings. The array is split into two visual groups by passing `dividerAfter: true` on the last item of group 1. The `AccordionGroup` component renders a MUI `<Divider>` after that item and keeps a single `expanded` state across all items (only one accordion open at a time).
+`src/components/views/Technologies.tsx` holds a flat `techs` array of i18n key strings. The array is split into two visual groups by passing `dividerAfter: true` on the last item of group 1. The `AccordionGroup` component renders a subtle MUI `<Divider>` after that item and keeps a single `expanded` state across all items (only one accordion open at a time).
 
 ## AccordionGroup
 
-`src/components/common/Accordion.tsx`. Accepts an `items` array of `{ header, content, subheader?, dividerAfter? }`. Single `useState` governs expanded state across all items. On desktop the first item is expanded by default; on mobile none are. Content is rendered with `dangerouslySetInnerHTML` so `<br /><br />` and `<a>` tags work.
+`src/components/common/Accordion.tsx`. Accepts an `items` array of `{ header, content, subheader?, dividerAfter? }`; `subheader` (a date) renders under the title, and an empty string hides it. Single `useState` governs expanded state across all items. On desktop the first item is expanded by default; on mobile none are. Content is rendered with `dangerouslySetInnerHTML` so `<br /><br />`, `<a>`, `<strong>` and `<ul>` work; each `<li>` renders as a soft tile. The card, chevron and content styling live in the `MuiAccordion*` overrides in `theme.ts`, not in the component.
 
-## Layout children type constraint
+## Theme and visual style
+
+The look is the "soft" design (direction C, "Dusk" dark / "Daylight" light): rounded cards, no borders, left-aligned text, never justified. Style through `src/theme/theme.ts` (palette and component overrides) rather than one-off `sx` colours.
+
+- Extra tones are in `palette.soft` (module-augmented): `raised`, `control`, `tile`, `accentTint`, `body`, `nav`, `shadow`, etc. Use them by path in `sx` (`color: "soft.body"`, `bgcolor: "soft.accentTint"`).
+- In dark mode, surfaces separate by tone only (`soft.shadow` is `none`); in light mode by a faint shadow. Don't add borders.
+- `shape.borderRadius` is 14, and MUI multiplies a numeric `sx` `borderRadius` by it (`borderRadius: 2` is 28px). Use the `radius` constants from `theme.ts` (strings with `px`) instead.
+- Drawers are restyled globally into floating rounded cards (the `MuiDrawer` override), which the mobile menus rely on.
+
+## Layout
+
+`Layout` renders `<main>` (max-width 820) and, when `header` is given, the page heading with its icon square. Profile omits `header` because its hero card holds the `<h1>`.
 
 `Layout` types `children` as `JSX.Element | JSX.Element[]` (with `import type { JSX } from "react"` — JSX is module-scoped in React 19). If a child is a `.map()` call mixed with other sibling children, wrap it in a `<>...</>` Fragment — otherwise TypeScript will reject the array-within-children as a type error at build time.
 

@@ -1,15 +1,13 @@
-import { SxProps } from "@mui/material";
+import { SxProps, Theme } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 
-type AvatarSize = "sm" | "lg"; // Defaults to "sm"
-
 interface Props {
-    size?: AvatarSize;
-    sx?: SxProps;
+    size: number;
+    // "rounded" uses the theme's control radius (14px).
+    variant?: "circular" | "rounded";
+    sx?: SxProps<Theme>;
 }
 
-const getSize = (size?: AvatarSize) => (size === "lg" ? 200 : 40);
-
-export const MyAvatar = ({ size, sx }: Props) => (
-    <Avatar src="profile_picture.jpg" alt="RP" sx={{ width: getSize(size), height: getSize(size), ...sx }} />
+export const MyAvatar = ({ size, variant = "circular", sx }: Props) => (
+    <Avatar src="profile_picture.jpg" alt="RP" variant={variant} sx={{ width: size, height: size, ...sx }} />
 );

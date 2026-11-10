@@ -1,18 +1,35 @@
 {
     "Name": "Roope Pöyry",
-    "JobTitle": "Lead Developer · React, .NET, AI-assisted workflows",
+    "JobTitle": "Lead Developer",
+    "skills": {
+        "react": "React",
+        "dotnet": ".NET",
+        "ai": "AI-assisted workflows"
+    },
     "Profile": "Profile",
     "Technologies": "Technologies",
     "Experience": "Experience",
     "Education": "Education",
     "Contact": "Contact",
+    "contactLabel": {
+        "email": "Email",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+    },
+    "home": "Home",
+    "mainNav": "Main",
+    "openMenu": "Open menu",
+    "settings": "Settings",
+    "changeLanguage": "Change language",
     "aboutMeContent": "Lead Developer with 9 years of experience across React, .NET, and Azure. I've built multiple services from scratch, modernized older systems, and enjoy the architecture and data modeling work that makes everything downstream easier. Recently focused on integrating AI-assisted development into both my own workflow and our team's processes.",
     "email": "roope.poyry1@gmail.com",
     "linkedin": "linkedin.com/in/rpoyry",
     "github": "github.com/rrobben",
     "mode": {
         "dark": "Dark theme",
-        "light": "Light theme"
+        "light": "Light theme",
+        "switchToLight": "Switch to light theme",
+        "switchToDark": "Switch to dark theme"
     },
     "workExperience": {
         "header": {

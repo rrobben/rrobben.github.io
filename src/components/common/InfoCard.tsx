@@ -1,32 +1,24 @@
-import { SxProps } from "@mui/material";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardHeader from "@mui/material/CardHeader";
 import Typography from "@mui/material/Typography";
 
 interface Props {
     header: string;
     content: string;
     subcontents: string[];
-    sx?: SxProps;
 }
 
-const InfoCard = ({ header, content, subcontents, sx }: Props) => {
-    return (
-        <Card sx={sx}>
-            <CardHeader title={header} sx={{ textAlign: "center" }} />
-            <CardContent>
-                <Typography variant="body1" gutterBottom>
-                    {content}
-                </Typography>
-                {subcontents.map((c) => (
-                    <Typography key={c} gutterBottom color="text.secondary">
-                        {c}
-                    </Typography>
-                ))}
-            </CardContent>
-        </Card>
-    );
-};
+const InfoCard = ({ header, content, subcontents }: Props) => (
+    <Card component="section" sx={{ p: { xs: 3, sm: 3.5 } }}>
+        <Typography variant="h6" component="h2" sx={{ mb: 1 }}>
+            {header}
+        </Typography>
+        <Typography sx={{ color: "soft.body", mb: 1 }}>{content}</Typography>
+        {subcontents.map((c) => (
+            <Typography key={c} sx={{ color: "text.secondary", fontSize: "0.875rem", fontWeight: 500 }}>
+                {c}
+            </Typography>
+        ))}
+    </Card>
+);
 
 export default InfoCard;

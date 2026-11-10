@@ -1,21 +1,22 @@
+import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Tab from "@mui/material/Tab";
-import Tabs from "@mui/material/Tabs";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import MenuIcon from "@mui/icons-material/Menu";
-import TerminalIcon from "@mui/icons-material/Terminal";
-import WorkIcon from "@mui/icons-material/Work";
-import SchoolIcon from "@mui/icons-material/School";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import TerminalRoundedIcon from "@mui/icons-material/TerminalRounded";
+import WorkOutlineRoundedIcon from "@mui/icons-material/WorkOutlineRounded";
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import AlternateEmailRoundedIcon from "@mui/icons-material/AlternateEmailRounded";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { SvgIconTypeMap, SxProps } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { useCurrentPath } from "../../hooks";
 import MobileMenu from "../common/MobileMenu";
+import { focusRing, radius } from "../../theme/theme";
 
 interface HeaderItem {
     path: string;
@@ -24,37 +25,51 @@ interface HeaderItem {
 }
 
 const pages: HeaderItem[] = [
-    { path: "", label: "Profile", Icon: AccountCircleIcon },
-    { path: "experience", label: "Experience", Icon: WorkIcon },
-    { path: "education", label: "Education", Icon: SchoolIcon },
-    { path: "tech", label: "Technologies", Icon: TerminalIcon },
-    { path: "contact", label: "Contact", Icon: AlternateEmailIcon },
+    { path: "", label: "Profile", Icon: AccountCircleOutlinedIcon },
+    { path: "experience", label: "Experience", Icon: WorkOutlineRoundedIcon },
+    { path: "education", label: "Education", Icon: SchoolOutlinedIcon },
+    { path: "tech", label: "Technologies", Icon: TerminalRoundedIcon },
+    { path: "contact", label: "Contact", Icon: AlternateEmailRoundedIcon },
 ];
+
+const NavLink = styled("a")(({ theme }) => ({
+    padding: "11px 18px",
+    borderRadius: radius.control,
+    color: theme.palette.soft.nav,
+    fontSize: "0.875rem",
+    fontWeight: 500,
+    lineHeight: 1.6,
+    textDecoration: "none",
+    transition: theme.transitions.create(["background-color", "color"]),
+    "&:hover": { backgroundColor: theme.palette.soft.control },
+    "&:focus-visible": focusRing(theme),
+    '&[aria-current="page"]': {
+        backgroundColor: theme.palette.soft.accentTint,
+        color: theme.palette.primary.main,
+        fontWeight: 600,
+    },
+}));
 
 function NavigationTabs() {
     const { t } = useTranslation();
     const currentPath = useCurrentPath();
 
     return (
-        <Tabs
-            textColor="secondary"
-            indicatorColor="secondary"
-            value={currentPath}
-            sx={{
-                flexGrow: 1,
-                display: { xs: "none", md: "flex" },
-            }}
+        <Box
+            component="nav"
+            aria-label={t("mainNav")}
+            sx={{ display: { xs: "none", md: "flex" }, flexWrap: "wrap", gap: 0.5, flex: "1 1 auto", ml: 1 }}
         >
             {pages.map((page) => (
-                <Tab
+                <NavLink
                     key={page.path}
-                    value={page.path}
-                    label={t(page.label)}
                     href={`#${page.path}`}
-                    sx={{ color: "white" }}
-                />
+                    aria-current={currentPath === page.path ? "page" : undefined}
+                >
+                    {t(page.label)}
+                </NavLink>
             ))}
-        </Tabs>
+        </Box>
     );
 }
 export default NavigationTabs;
@@ -76,14 +91,19 @@ export const MobileNavigationMenu = ({ open, setOpen, sx }: MobileNavigationMenu
     };
 
     return (
-        <MobileMenu open={open} setOpen={setOpen} Icon={MenuIcon} anchor="top" sx={sx}>
-            <List>
+        <MobileMenu open={open} setOpen={setOpen} Icon={MenuRoundedIcon} label={t("openMenu")} anchor="top" sx={sx}>
+            <List component="nav" aria-label={t("mainNav")} sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
                 {pages.map(({ path, label, Icon }) => (
-                    <ListItemButton key={path} selected={currentPath === path} onClick={() => handleNavItemClick(path)}>
+                    <ListItemButton
+                        key={path}
+                        selected={currentPath === path}
+                        aria-current={currentPath === path ? "page" : undefined}
+                        onClick={() => handleNavItemClick(path)}
+                    >
                         <ListItemIcon>
-                            <Icon sx={{ color: "text.primary" }} />
+                            <Icon />
                         </ListItemIcon>
-                        <ListItemText>{t(label)}</ListItemText>
+                        <ListItemText slotProps={{ primary: { sx: { fontWeight: "inherit" } } }}>{t(label)}</ListItemText>
                     </ListItemButton>
                 ))}
             </List>

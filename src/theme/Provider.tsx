@@ -1,8 +1,8 @@
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useMemo, type JSX } from "react";
 import { PaletteMode } from "@mui/material";
-import { getPalette, getResponsiveFontSizes, themeConfig } from "./theme.ts";
+import { createAppTheme } from "./theme.ts";
 import { useLocalStorage } from "usehooks-ts";
 import { ColorModeContext } from "./ColorModeContext";
 
@@ -25,7 +25,7 @@ const Provider = ({ children }: Props) => {
     );
 
     // Update the theme only if the mode changes
-    const theme = useMemo(() => getResponsiveFontSizes(createTheme({ ...themeConfig, ...getPalette(mode) })), [mode]);
+    const theme = useMemo(() => createAppTheme(mode), [mode]);
 
     return (
         <ColorModeContext.Provider value={colorMode}>

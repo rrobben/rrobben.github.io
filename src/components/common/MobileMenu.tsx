@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
 import MobileDrawer from "./MobileDrawer";
+import ControlButton from "./ControlButton";
 import { DrawerProps, SvgIconTypeMap, SxProps } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 
@@ -10,11 +10,12 @@ interface Props {
     open: boolean;
     setOpen: (open: boolean) => void;
     Icon: OverridableComponent<SvgIconTypeMap>;
+    label: string;
     children: JSX.Element | JSX.Element[];
     sx?: SxProps;
 }
 
-function MobileMenu({ anchor, open, setOpen, Icon, children, sx }: Props) {
+function MobileMenu({ anchor, open, setOpen, Icon, label, children, sx }: Props) {
     const toggleMenuOpen = () => {
         setOpen(!open);
     };
@@ -25,9 +26,9 @@ function MobileMenu({ anchor, open, setOpen, Icon, children, sx }: Props) {
     return (
         <>
             <Box sx={{ display: { xs: "block", md: "none" }, ...sx }}>
-                <IconButton size="large" onClick={toggleMenuOpen} color="inherit">
+                <ControlButton onClick={toggleMenuOpen} aria-label={label} aria-expanded={open}>
                     <Icon />
-                </IconButton>
+                </ControlButton>
             </Box>
             <MobileDrawer anchor={anchor} open={open} onClose={handleCloseMenu}>
                 {children}

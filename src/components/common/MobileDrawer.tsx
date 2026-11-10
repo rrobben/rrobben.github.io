@@ -1,5 +1,4 @@
 import type { JSX } from "react";
-import Toolbar from "@mui/material/Toolbar";
 import Drawer, { DrawerProps } from "@mui/material/Drawer";
 
 interface Props {
@@ -9,6 +8,7 @@ interface Props {
     children: JSX.Element | JSX.Element[];
 }
 
+// The theme styles drawer paper as a floating rounded card (see MuiDrawer in theme.ts).
 function MobileDrawer({ anchor, open, onClose, children }: Props) {
     return (
         <Drawer
@@ -21,9 +21,9 @@ function MobileDrawer({ anchor, open, onClose, children }: Props) {
             }}
             sx={{
                 display: { sm: "block", md: "none" },
+                "&.MuiDrawer-anchorRight .MuiDrawer-paper": { minWidth: 260 },
             }}
         >
-            <Toolbar />
             {children}
         </Drawer>
     );
