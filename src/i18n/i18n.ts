@@ -25,6 +25,7 @@ export const initI18n = (lng: string) =>
                 escapeValue: false, // react already safes from xss
             },
             keySeparator: ".",
+            returnEmptyString: true, // i18next 27 defaults to false, which renders the key for intentionally empty values
         });
 
 export default i18n;
