@@ -1,7 +1,10 @@
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Chip from "@mui/material/Chip";
+import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import { Link as RouterLink } from "react-router";
 import { MyAvatar } from "../common/MyAvatar";
 import ContactTiles from "../common/ContactTiles";
 import { useTranslation } from "react-i18next";
@@ -59,6 +62,14 @@ const Profile = () => {
                                 </Typography>
                             ))}
                     </>
+                    <Link
+                        component={RouterLink}
+                        to="/tech"
+                        sx={{ display: "inline-flex", alignItems: "center", gap: 0.75, mt: 2.5, fontWeight: 600 }}
+                    >
+                        {t("howIWorkLink")}
+                        <ArrowForwardRoundedIcon fontSize="small" />
+                    </Link>
                 </Card>
                 <ContactTiles />
             </Box>

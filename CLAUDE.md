@@ -33,6 +33,7 @@ All user-visible text lives in `src/i18n/en.json` and `src/i18n/fi.json`. Finnis
 ## i18n conventions
 
 - Paragraph breaks within a single translation value use `<br /><br />` (with spaces). The Accordion component renders content via `dangerouslySetInnerHTML`, so HTML is supported there. The Profile bio is split on `<br /><br />` and rendered as multiple `<Typography>` elements.
+- HMR doesn't reliably refresh `en.json`/`fi.json` in the dev server; reload the page before concluding a new key is missing.
 - `fi.json` only needs to contain keys that differ from `en.json`. Keys not present in Finnish fall back to English.
 - The `howIWork` block exists in both files. Adding an accordion there requires a key in `howIWork.header.*` and `howIWork.content.*` in both files, plus adding the key to the `items` array in `HowIWork.tsx`.
 
