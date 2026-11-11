@@ -77,3 +77,5 @@ Contexts (`I18nContext`, `ColorModeContext`) live in their own files, separate f
 ## Private notes
 
 `easyopp-notes.local/` holds raw notes on EasyOpp work (outcomes, ownership, framing), indexed by its `README.md`. Use them as source material for site copy. The folder is gitignored by the `*.local` rule and the repo is public, so never commit it or copy internal details (costs, partner or customer names, PR numbers) into the site verbatim. Keep telematics vendors generic on the site ("tracker vendors"), never by name. Claim only what the notes support: say "built for" where a note has no usage numbers.
+
+Security details stay off the site (decided 2026-11-11): don't say the triage MCP server is reachable as a Claude.ai connector, and don't describe how secrets are masked, past masking gaps, hosting or domains. Say staff sign in with their own work account and the server holds the credentials, never "without credentials", which reads as no authentication. Describe the review flow as staged review that prepares a human approval, with the automatic line review as one optional code-level step (facts in `easyopp-notes.local/ai_review_pipeline.md`).
