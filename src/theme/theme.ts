@@ -48,7 +48,7 @@ const getPalette = (mode: PaletteMode) =>
                   raised: "#1b2531",
                   control: "#1f2a37",
                   controlHover: "#263342",
-                  tile: "#222e3c",
+                  tile: "#283648",
                   accentTint: "rgba(144, 202, 249, 0.12)",
                   chipText: "#b9dcfb",
                   body: "#d3dde8",
@@ -68,7 +68,7 @@ const getPalette = (mode: PaletteMode) =>
                   raised: "#ffffff",
                   control: "#eef2f6",
                   controlHover: "#e3e9f0",
-                  tile: "#f2f5f9",
+                  tile: "#e8edf3",
                   accentTint: "#e3eefa",
                   chipText: "#2b5d92",
                   body: "#34506f",
@@ -187,6 +187,8 @@ export const createAppTheme = (mode: PaletteMode) => {
                             flexDirection: "column",
                             gap: 10,
                         },
+                        // A <strong> subheading directly above a list gets the tile gap, less than the blank line after a list.
+                        "& strong + ul": { marginTop: 10 },
                         "& li": {
                             backgroundColor: soft.tile,
                             borderRadius: radius.tile,
