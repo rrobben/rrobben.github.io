@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "resolveJsonModule": true,
+    "strict": true,
+    "noEmit": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "plugins", "src/content", "src/i18n/en.json"]
 }

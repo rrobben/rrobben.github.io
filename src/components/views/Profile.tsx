@@ -9,9 +9,7 @@ import { MyAvatar } from "../common/MyAvatar";
 import ContactTiles from "../common/ContactTiles";
 import { useTranslation } from "react-i18next";
 import Layout from "../layout/Layout";
-
-// i18n keys under `skills.*`, shown as chips under the job title.
-const skills = ["react", "dotnet", "azure", "claudeCode"];
+import { skills } from "../../content/sections";
 
 const cardPadding = { xs: 3, sm: 4 };
 

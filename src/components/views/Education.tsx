@@ -3,8 +3,7 @@ import Box from "@mui/material/Box";
 import Layout from "../layout/Layout";
 import InfoCard from "../common/InfoCard";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
-
-const eds = ["Tuni", "Järvenpään lukio"];
+import { educationItems } from "../../content/sections";
 
 const Education = () => {
     const { t } = useTranslation();
@@ -12,7 +11,7 @@ const Education = () => {
     return (
         <Layout header={t("Education")} Icon={SchoolOutlinedIcon}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-                {eds.map((e) => (
+                {educationItems.map((e) => (
                     <InfoCard
                         key={e}
                         header={t(`education.header.${e}`)}
