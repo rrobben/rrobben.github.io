@@ -46,7 +46,7 @@ function Header() {
                 boxShadow: (theme) => theme.palette.soft.shadow,
             }}
         >
-            <HomeLink href="#" aria-label={t("home")} onClick={handleCloseMenu}>
+            <HomeLink href="#/"aria-label={t("home")} onClick={handleCloseMenu}>
                 <MyAvatar size={44} variant="rounded" />
             </HomeLink>
             <NavigationTabs />

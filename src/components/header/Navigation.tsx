@@ -63,7 +63,7 @@ function NavigationTabs() {
             {pages.map((page) => (
                 <NavLink
                     key={page.path}
-                    href={`#${page.path}`}
+                    href={`#/${page.path}`}
                     aria-current={currentPath === page.path ? "page" : undefined}
                 >
                     {t(page.label)}
