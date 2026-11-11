@@ -9,7 +9,7 @@ export const howIWorkItems = ["AIAssisted", "Product", "Guardrails", "Architectu
 export const howIWorkDividerAfter = "Production";
 
 // `workExperience.*`
-export const experienceItems = ["EasyOpp", "Adalia", "Other"];
+export const experienceItems = ["EasyOpp", "EasyOppSenior", "Adalia", "Other"];
 
 // `education.*`
 export const educationItems = ["Tuni", "Järvenpään lukio"];

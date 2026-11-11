@@ -47,6 +47,8 @@ Decided 2026-11: with most code written by AI, the page leads with working pract
 
 Positioning (decided 2026-11-10): the site targets architect and lead developer roles. The profile leads with "where architecture meets product" and with matching human review to the stakes (read the diff in payroll, data models and production; spec, tests and a browser check suffice in side projects). Side projects lead with the user problem, product decisions (briefs, Claude mockups) and what real use taught about building with agents; the stack is one closing sentence, not per-project detail.
 
+The EasyOpp role is two Experience entries, matching LinkedIn (decided 2026-11-11): Senior Developer 1/2023–8/2024 holds the 2024 payroll engine redesign, and Lead Developer 8/2024– holds everything since, mentioning the engine only as its sole maintainer. Keep work in the entry whose dates it falls in.
+
 Years of experience count from 4/2017: "almost 10 years" until spring 2027, then "10 years".
 
 ## AccordionGroup
