@@ -6,7 +6,7 @@ import { educationItems, experienceItems, howIWorkItems, skills } from "../src/c
 // empty page. This plugin builds the English copy from `en.json` into two static forms:
 // `llms.txt` (Markdown) next to the page, and a `<noscript>` block in `index.html`.
 
-const siteUrl = "https://rrobben.github.io/about-me/";
+const siteUrl = "https://rrobben.github.io/";
 const links = [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/rpoyry/" },
     { label: "GitHub", href: "https://github.com/rrobben" },

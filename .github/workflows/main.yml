@@ -48,6 +48,8 @@ jobs:
         with:
           # Upload dist folder
           path: './dist'
+          # Keep .well-known/assetlinks.json, which ties the Sleep Clock Android app to this domain
+          include-hidden-files: true
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

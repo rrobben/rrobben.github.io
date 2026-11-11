@@ -20,6 +20,8 @@ There are no tests.
 
 Every push to `main` deploys the site to GitHub Pages (`.github/workflows/main.yml`), so never push unless the user asks; `git push` is denied in `.claude/settings.json`. The hash router is required for GitHub Pages (no server-side routing).
 
+The site is the user site at the domain root, `https://rrobben.github.io/` (repo `rrobben/rrobben.github.io`, renamed from `about-me` on 2026-11-11; the base path is `/`). A separate `rrobben/about-me` repo only redirects the old `/about-me/` links here, and the Sleep Clock privacy policy that used to be at the root now lives in `rrobben/sleep-clock-privacy`. `public/.well-known/assetlinks.json` belongs to the Sleep Clock Android app (it verifies the app's link to this domain and only works at the root), so keep it, and keep `include-hidden-files: true` in the deploy workflow or the upload drops it.
+
 ## Check docs, not memory
 
 React 19, MUI 9, react-router 8 and i18next 27 / react-i18next 18 may be newer than your training data. Before using an API, check the installed version's types in `node_modules` and the official docs. When adding a package, use the latest stable release (`npm view <pkg> dist-tags.latest`).
@@ -78,7 +80,7 @@ Contexts (`I18nContext`, `ColorModeContext`) live in their own files, separate f
 
 The page renders in the browser and hash routes aren't separate URLs, so bots that don't run JavaScript (most AI crawlers) would see an empty page. `plugins/staticContent.ts` builds the English copy from `en.json` into `dist/llms.txt` and a `<noscript>` block in `index.html` at build time, so it never needs a hand edit. The order of each list lives in `src/content/sections.ts`, shared with the views: add a new accordion key there, not in the view. The email address is left out of the static copy on purpose (spam scrapers); LinkedIn and GitHub are in it.
 
-No robots.txt here: crawlers read it only at the host root, which is the separate `rrobben.github.io` repo, and it has none, so everything is allowed.
+No robots.txt, so everything is allowed.
 
 ## Private notes
 

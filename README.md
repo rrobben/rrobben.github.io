@@ -1,6 +1,6 @@
 # about-me
 
-My portfolio site, live at **[rrobben.github.io/about-me](https://rrobben.github.io/about-me/)**, in English and Finnish.
+My portfolio site, live at **[rrobben.github.io](https://rrobben.github.io/)**, in English and Finnish.
 
 It is also a small example of how I build software now. I decide what the site says, how it looks and how it is structured; Claude Code writes most of the code, inside guardrails kept in the repo.
 
@@ -25,7 +25,7 @@ React 19, TypeScript, Vite, MUI, react-i18next and react-router (hash router, si
 
 ```bash
 npm install
-npm run dev     # http://localhost:5173/about-me/
+npm run dev     # http://localhost:5173/
 npm run check   # type check and lint
 npm run build   # production build into dist/
 ```
